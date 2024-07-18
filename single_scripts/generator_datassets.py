@@ -2,6 +2,7 @@
 
 import bpy
 import math
+import os
 
 
 def generate_dataset(blend_file, output_directory, object_name, num_images):

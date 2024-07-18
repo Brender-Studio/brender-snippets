@@ -2,6 +2,7 @@
 
 
 import bpy
+import os
 
 def simulation_physics(blend_file, output_directory):
     """

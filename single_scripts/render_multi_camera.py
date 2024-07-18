@@ -1,6 +1,10 @@
 
 # Este script configura múltiples cámaras y permite renderizar la escena desde cada una de ellas.
 
+import bpy
+import os
+
+
 def render_multi_camera(blend_file, cameras, output_directory):
     """
     Render multiple images from different cameras in a blend file.

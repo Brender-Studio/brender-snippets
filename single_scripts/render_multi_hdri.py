@@ -1,6 +1,11 @@
 
 # Este script cambia el HDRI del entorno y renderiza la escena para cada HDRI.
 
+
+import bpy 
+import os
+
+
 def render_multi_hdri(blend_file, output_directory, hdri_names):
     """
     Render multiple HDRI images from a blend file.

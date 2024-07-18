@@ -2,6 +2,7 @@
 
 import bpy
 import random
+import os
 
 
 def render_random_texture(blend_file, output_directory, object_name, num_images, textures):
