@@ -5,6 +5,7 @@
 # Se requiere crear una plantilla para los scripts que se suban al repositorio de scripts de brender-snippets. 
 # La plantilla debe contener la siguiente información:
 
+# - Nombre del script
 # Name:
 # Versión de blender
 # Descripción del script
