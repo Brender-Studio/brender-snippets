@@ -32,8 +32,8 @@ def render_multi_camera(blend_file, cameras, output_directory):
 
 # Usage example
 
-blend_file = os.environ['EFS_BLENDER_FILE']
-output_directory = os.environ['EFS_BLENDER_OUTPUT_PATH']
+blend_file = os.environ['EFS_BLENDER_FILE_PATH']
+output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
 
 # Extract the names of the cameras from the blend file
 cameras = [obj.name for obj in bpy.data.objects if obj.type == 'CAMERA']

@@ -31,8 +31,8 @@ def render_multi_hdri(blend_file, output_directory, hdri_names):
 
 
 # Usage example
-blend_file = os.environ['EFS_BLENDER_FILE']
-output_directory = os.environ['EFS_BLENDER_OUTPUT_PATH']
+blend_file = os.environ['EFS_BLENDER_FILE_PATH']
+output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
 
 # Extact the names of the HDRI images from the blend file
 hdri_names = [img.name for img in bpy.data.images if img.source == 'FILE']

@@ -41,7 +41,7 @@ def simulation_physics(blend_file, output_directory):
 
 
 # Usage example
-blend_file = os.environ['EFS_BLENDER_FILE']
-output_directory = os.environ['EFS_BLENDER_OUTPUT_PATH']
+blend_file = os.environ['EFS_BLENDER_FILE_PATH']
+output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
 
 simulation_physics(blend_file, output_directory)
