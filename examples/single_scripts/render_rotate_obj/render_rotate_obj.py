@@ -3,6 +3,11 @@
 import bpy
 import math
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def generate_dataset(blend_file, output_directory, object_name, num_images):
@@ -15,17 +20,22 @@ def generate_dataset(blend_file, output_directory, object_name, num_images):
     - object_name (str): The name of the object to rotate.
     - num_images (int): The number of images to generate.
     """
-    # Open the blend file
-    bpy.ops.wm.open_mainfile(filepath=blend_file)
-    
-    # Set the output directory
-    bpy.context.scene.render.filepath = output_directory
     
     # Get the object to rotate
     obj = bpy.data.objects[object_name]
+    logger.info(f"Object '{object_name}' found.")
     
     # Set the rotation step
     step = 360 / num_images
+    logger.info(f"Rotation step: {step}")
+    
+    # Get te active frame from the scene context
+    active_frame = bpy.context.scene.frame_current
+    logger.info(f"Active frame: {active_frame}")
+    
+    # Set the output directory
+    render_file_path = os.path.join(output_directory, f"{object_name}_{active_frame:05d}.png")
+    logger.info(f"Output directory: {output_directory}")
     
     # Loop through each angle and render the image
     for i in range(num_images):
@@ -33,7 +43,9 @@ def generate_dataset(blend_file, output_directory, object_name, num_images):
         obj.rotation_euler[2] = math.radians(i * step)
         
         # Render the image
+        bpy.context.scene.render.filepath = render_file_path
         bpy.ops.render.render(write_still=True)
+        logger.info(f"Render saved to {render_file_path}")
 
 
 # Usage example
