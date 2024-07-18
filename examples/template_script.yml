@@ -1,0 +1,22 @@
+
+# Plantilla script
+
+
+# Se requiere crear una plantilla para los scripts que se suban al repositorio de scripts de brender-snippets. 
+# La plantilla debe contener la siguiente información:
+
+# Name:
+# Versión de blender
+# Descripción del script
+# Tipo: Utility, example
+# Job type: Array, single job 
+# Envs:
+# Código
+# Nota 
+# Estructura de proyecto (tree) (single script or project folder)
+# Entrypoint
+# References ( video, repo ) 
+# Screenshoots
+# Tags
+
+

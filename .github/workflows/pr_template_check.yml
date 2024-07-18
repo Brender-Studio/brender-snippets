@@ -1,0 +1,38 @@
+name: PR Template Check
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  check-template:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    - name: Check PR template
+      id: check_pr_template
+      run: |
+        TEMPLATE_FILE=".github/PULL_REQUEST_TEMPLATE/script_template.md"
+        PR_BODY=$(jq -r '.pull_request.body' "$GITHUB_EVENT_PATH")
+
+        MISSING_FIELDS=0
+
+        for FIELD in "Name" "Versión de Blender" "Descripción del script" "Tipo" "Job type" "Envs" "Código" "Nota" "Estructura de proyecto" "Entrypoint" "References" "Screenshots" "Tags"; do
+          if ! echo "$PR_BODY" | grep -q "## $FIELD"; then
+            echo "Missing $FIELD"
+            MISSING_FIELDS=$((MISSING_FIELDS + 1))
+          fi
+        done
+
+        if [ "$MISSING_FIELDS" -ne 0 ]; then
+          echo "Some fields are missing in the PR description. Please fill out all required fields."
+          exit 1
+        fi
+
+    - name: Set PR status
+      if: failure()
+      run: |
+        gh pr comment ${{ github.event.pull_request.number }} --body "Your PR is missing some required fields. Please fill out all fields as per the template."
