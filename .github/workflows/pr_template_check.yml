@@ -20,22 +20,26 @@ jobs:
     - name: Check PR template
       id: check_pr_template
       run: |
-        TEMPLATE_FILE=".github/PULL_REQUEST_TEMPLATE/script_template.md"
+        # Fetch PR body
         PR_BODY=$(jq -r '.pull_request.body' "$GITHUB_EVENT_PATH")
-
-        MISSING_FIELDS=0
-
-        for FIELD in "Name" "Blender Version" "Script Description" "Type" "Job Type" "Envs" "Code" "Note" "Project Structure" "Entrypoint" "References" "Screenshots" "Tags"; do
+        
+        # Define required fields
+        REQUIRED_FIELDS=("Name" "Blender Version" "Script Description" "Type" "Job Type" "Envs" "Code" "Note" "Project Structure" "Entrypoint" "References" "Screenshots" "Tags")
+        
+        # Check each field
+        MISSING_FIELDS=()
+        for FIELD in "${REQUIRED_FIELDS[@]}"; do
           if ! echo "$PR_BODY" | grep -q "## $FIELD"; then
-            echo "Missing $FIELD"
-            MISSING_FIELDS=$((MISSING_FIELDS + 1))
+            MISSING_FIELDS+=("$FIELD")
           fi
         done
-
-        echo "MISSING_FIELDS=$MISSING_FIELDS" >> $GITHUB_ENV
+        
+        # Set output and environment variable
+        echo "MISSING_FIELDS=${MISSING_FIELDS[*]}" >> $GITHUB_ENV
+        echo "MISSING_FIELDS_COUNT=${#MISSING_FIELDS[@]}" >> $GITHUB_ENV
 
     - name: Comment on PR if fields are missing
-      if: ${{ steps.check_pr_template.outputs.missing_fields != '0' }}
+      if: ${{ env.MISSING_FIELDS_COUNT != 0 }}
       uses: actions/github-script@v6
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,7 +47,7 @@ jobs:
           const prNumber = context.payload.pull_request.number;
           const missingFields = process.env.MISSING_FIELDS;
           const body = `Your PR is missing some required fields. Please fill out all fields as per the template. Missing fields: ${missingFields}`;
-          github.issues.createComment({
+          await github.rest.issues.createComment({
             issue_number: prNumber,
             owner: context.repo.owner,
             repo: context.repo.repo,
