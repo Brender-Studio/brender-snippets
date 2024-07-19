@@ -44,12 +44,12 @@ if __name__ == "__main__":
     logger.info("Script started...")
     
     # Cloud Usage
-    # object_name = os.environ['EFS_BLENDER_OBJECT_NAME']
-    # output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
+    object_name = os.environ['EFS_BLENDER_OBJECT_NAME']
+    output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
     
     # Local Usage
-    object_name = "your_object_name"
-    output_directory = "/path/to/output/directory"  
+    # object_name = "your_object_name"
+    # output_directory = "/path/to/output/directory"  
     
     if not output_directory:
         logger.error("Output directory not specified.")
