@@ -1,47 +1,46 @@
-# Plantilla script
+# Script Template
 
-# Se requiere crear una plantilla para los scripts que se suban al repositorio de scripts de brender-snippets.
-# La plantilla debe contener la siguiente información:
+# Please fill out the following template for any scripts being added to the brender-snippets repository.
 
 ## Name:
-<!-- Escribe el nombre del script -->
+<!-- Enter the name of the script -->
 
-## Versión de Blender:
-<!-- Especifica la versión de Blender con la que es compatible el script -->
+## Blender Version:
+<!-- Specify the Blender version compatible with the script -->
 
-## Descripción del script:
-<!-- Describe brevemente lo que hace el script -->
+## Script Description:
+<!-- Briefly describe what the script does -->
 
-## Tipo:
-<!-- Indica si es una utilidad o un ejemplo -->
+## Type:
+<!-- Indicate whether it's a utility or an example -->
 - [ ] Utility
 - [ ] Example
 
-## Job type:
-<!-- Indica el tipo de trabajo que realiza el script -->
+## Job Type:
+<!-- Indicate the type of job the script performs -->
 - [ ] Array
 - [ ] Single job
 
 ## Envs:
-<!-- Define las variables de entorno requeridas -->
+<!-- Define the required environment variables -->
 
-## Código:
-<!-- Incluye el código del script -->
+## Code:
+<!-- Include the script code -->
 
-## Nota:
-<!-- Cualquier nota adicional sobre el script -->
+## Note:
+<!-- Any additional notes about the script -->
 
-## Estructura de proyecto (tree):
-<!-- Proporciona la estructura del proyecto (un solo script o carpeta de proyecto) -->
+## Project Structure (tree):
+<!-- Provide the project structure (a single script or project folder) -->
 
 ## Entrypoint:
-<!-- Define el punto de entrada del script -->
+<!-- Define the entry point of the script -->
 
 ## References (video, repo):
-<!-- Proporciona referencias como videos o repositorios relacionados -->
+<!-- Provide references like videos or related repositories -->
 
 ## Screenshots:
-<!-- Incluye capturas de pantalla relevantes -->
+<!-- Include relevant screenshots -->
 
 ## Tags:
-<!-- Añade etiquetas relevantes para el script -->
+<!-- Add relevant tags for the script -->

@@ -1,44 +1,80 @@
-
-# Este script cambia el HDRI del entorno y renderiza la escena para cada HDRI.
-
-
 import bpy 
 import os
+import logging
 
 
-def render_multi_hdri(blend_file, output_directory, hdri_names):
-    """
-    Render multiple HDRI images from a blend file.
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+def render_multi_hdri(output_directory):
+    logger.info(f"Starting render_multi_hdri with output directory: {output_directory}")
     
-    Parameters:
-    - blend_file (str): The path to the blend file.
-    - output_directory (str): The path to the output directory.
-    - hdri_names (list): A list of HDRI names to render.
-    """
-    # Open the blend file
-    bpy.ops.wm.open_mainfile(filepath=blend_file)
+    # Get the active frame from the scene context
+    active_frame = bpy.context.scene.frame_current
+    logger.info(f"Active frame: {active_frame}")
     
-    # Set the output directory
-    bpy.context.scene.render.filepath = output_directory
+    # Ensure the world has a node tree
+    world = bpy.context.scene.world
+    if world.node_tree is None:
+        world.use_nodes = True
+        logger.info("Created node tree for world")
     
-    # Loop through each HDRI name and render the frames
-    for hdri_name in hdri_names:
-        # Set the HDRI image
-        bpy.data.worlds['World'].node_tree.nodes['Environment Texture'].image = bpy.data.images[hdri_name]
+    # Get the Environment Texture node
+    env_tex_node = None
+    for node in world.node_tree.nodes:
+        if node.type == 'TEX_ENVIRONMENT':
+            env_tex_node = node
+            break
+    
+    if env_tex_node is None:
+        logger.error("No Environment Texture node found in the World node tree")
+        return
+    else:
+        logger.info("Found Environment Texture node")
+    
+    # Get all HDRI images
+    hdri_images = [img for img in bpy.data.images if img.source == 'FILE']
+    logger.info(f"Found {len(hdri_images)} HDRI images")
+    
+    if not hdri_images:
+        logger.warning("No HDRI images found in the scene")
+        return
+    
+    # Loop through each HDRI image and render
+    for hdri_image in hdri_images:
+        logger.info(f"Processing HDRI image: {hdri_image.name}")
         
-        # Render the frames
+        # Set the HDRI image
+        env_tex_node.image = hdri_image
+        logger.info(f"HDRI image set to {hdri_image.name}")
+        
+        # Set the output path to render
+        render_file_path = os.path.join(output_directory, f"{hdri_image.name}_{active_frame:05d}.png")
+        logger.info(f"Render file path set to: {render_file_path}")
+        
+        # Render the image
+        bpy.context.scene.render.filepath = render_file_path
+        logger.info("Starting render...")
         bpy.ops.render.render(write_still=True)
+        logger.info(f"Render completed and saved to {render_file_path}")
 
-
-# Usage example
-blend_file = os.environ['EFS_BLENDER_FILE_PATH']
-output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
-
-# Extact the names of the HDRI images from the blend file
-hdri_names = [img.name for img in bpy.data.images if img.source == 'FILE']
-
-# Print the names of the HDRI images
-for hdri_name in hdri_names:
-    print(hdri_name)
-
-render_multi_hdri(blend_file, output_directory, hdri_names)
+if __name__ == "__main__":
+    logger.info("Script started")
+    
+    # Cloud Usage:
+    # blend_file = os.environ.get('EFS_BLENDER_FILE_PATH')
+    # output_directory = os.environ.get('EFS_BLENDER_OUTPUT_FOLDER_PATH')
+    
+    # Local Usage:
+    output_directory = "path/to/local/output/directory"
+    logger.info(f"Output directory set to: {output_directory}")
+    
+    if not output_directory:
+        logger.error("Output directory not specified")
+        raise ValueError("Output directory not specified")
+    
+    
+    render_multi_hdri(output_directory)
+    
+    logger.info("Script completed")
