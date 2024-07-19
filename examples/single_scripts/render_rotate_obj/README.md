@@ -1,1 +1,0 @@
-# Este script rota un objeto en la escena y renderiza imágenes desde diferentes ángulos para generar un dataset.
