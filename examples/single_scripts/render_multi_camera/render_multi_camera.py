@@ -30,9 +30,15 @@ def render_multi_camera(cameras, output_directory):
 
 # Usage example
 def main():
+
+    # Cloud Usage:
     blend_file = os.environ.get('EFS_BLENDER_FILE_PATH')
     output_directory = os.environ.get('EFS_BLENDER_OUTPUT_FOLDER_PATH')
     logger.info(msg="Environment variables", extra={"EFS_BLENDER_FILE_PATH": blend_file, "EFS_BLENDER_OUTPUT_FOLDER_PATH": output_directory})
+    
+    # Local Usage:
+    # blend_file = "/home/dave/Escritorio/BLENDER/blend_files/cameras.blend"
+    # output_directory = "/home/dave/Escritorio/BLENDER/output_camera_TEST"
 
     if not blend_file:
         logger.error("EFS_BLENDER_FILE_PATH environment variable is not set")
