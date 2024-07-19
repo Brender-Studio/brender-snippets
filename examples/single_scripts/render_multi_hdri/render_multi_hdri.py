@@ -63,12 +63,12 @@ if __name__ == "__main__":
     logger.info("Script started")
     
     # Cloud Usage:
-    # blend_file = os.environ.get('EFS_BLENDER_FILE_PATH')
-    # output_directory = os.environ.get('EFS_BLENDER_OUTPUT_FOLDER_PATH')
+    blend_file = os.environ.get('EFS_BLENDER_FILE_PATH')
+    output_directory = os.environ.get('EFS_BLENDER_OUTPUT_FOLDER_PATH')
     
-    # Local Usage:
-    output_directory = "path/to/local/output/directory"
-    logger.info(f"Output directory set to: {output_directory}")
+    # # Local Usage:
+    # output_directory = "path/to/local/output/directory"
+    # logger.info(f"Output directory set to: {output_directory}")
     
     if not output_directory:
         logger.error("Output directory not specified")
