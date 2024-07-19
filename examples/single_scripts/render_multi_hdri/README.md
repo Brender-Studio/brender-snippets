@@ -48,13 +48,6 @@ This script is particularly useful in product visualization and architectural re
 
 By automating the process of rendering with multiple HDRIs, this script saves significant time and effort in these workflows, allowing artists and designers to focus on creative decisions rather than repetitive rendering tasks.
 
-## Project structure:
-
-```plaintext
-render_multi_hdri/
-├── README.md
-└── render_multi_hdri.py
-```
 
 ## Entrypoint:
 render_multi_hdri.py

@@ -10,7 +10,12 @@ jobs:
 
     steps:
     - name: Checkout repository content
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.10.0'
 
     - name: Check PR template
       id: check_pr_template
@@ -20,19 +25,27 @@ jobs:
 
         MISSING_FIELDS=0
 
-        for FIELD in "Name" "Versión de Blender" "Descripción del script" "Tipo" "Job type" "Envs" "Código" "Nota" "Estructura de proyecto" "Entrypoint" "References" "Screenshots" "Tags"; do
+        for FIELD in "Name" "Blender Version" "Script Description" "Type" "Job Type" "Envs" "Code" "Note" "Project Structure" "Entrypoint" "References" "Screenshots" "Tags"; do
           if ! echo "$PR_BODY" | grep -q "## $FIELD"; then
             echo "Missing $FIELD"
             MISSING_FIELDS=$((MISSING_FIELDS + 1))
           fi
         done
 
-        if [ "$MISSING_FIELDS" -ne 0 ]; then
-          echo "Some fields are missing in the PR description. Please fill out all required fields."
-          exit 1
-        fi
+        echo "MISSING_FIELDS=$MISSING_FIELDS" >> $GITHUB_ENV
 
-    - name: Set PR status
-      if: failure()
-      run: |
-        gh pr comment ${{ github.event.pull_request.number }} --body "Your PR is missing some required fields. Please fill out all fields as per the template."
+    - name: Comment on PR if fields are missing
+      if: ${{ steps.check_pr_template.outputs.missing_fields != '0' }}
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const prNumber = context.payload.pull_request.number;
+          const missingFields = process.env.MISSING_FIELDS;
+          const body = `Your PR is missing some required fields. Please fill out all fields as per the template. Missing fields: ${missingFields}`;
+          github.issues.createComment({
+            issue_number: prNumber,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: body
+          });
