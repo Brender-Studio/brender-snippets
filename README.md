@@ -1,6 +1,6 @@
 # Brender Snippet for Brender Studio
 
-Brender Snippets is an open source repository designed to allow you to upload your project scripts and use them in [Brender Studio](www.brenderstudio.com), a cloud-based rendering platform for Blender that allows you to upload and render your projects using custom scripts.
+Brender Snippets is an open source repository designed to allow you to upload your project scripts and use them in <a href="https://www.brenderstudio.com" target="_blank">Brender Studio</a>, a cloud-based rendering platform for Blender that allows you to upload and render your projects using custom scripts.
 
 We want Brender Snippets to be another plugin for Brender Studio and allow you to render your projects with scripts written by the community.
 
@@ -12,13 +12,13 @@ Is a powerful tool for the Brender Studio and Blender community. Provides an eas
 
 ## About Brender Studio
 Is a cloud rendering platform designed specifically for Blender projects. With Brender Studio, you can upload your projects and render them using your custom scripts. It offers a convenient and efficient way to harness the power of cloud rendering, allowing you to focus on your creative process without worrying about hardware limitations.
-More information about Brender Studio can be found [here](www.brenderstudio.com/docs).
+More information about Brender Studio can be found <a href="https://www.brenderstudio.com/docs" target="_blank">Here</a>.
 
 ### Contributing
 We recommend that you contribute to the Brender-snippets examples repository by uploading your own scripts and utility examples. By sharing your knowledge and experience, you can help the Blender community grow and prosper. Be sure to follow our contribution guidelines outlined in the CONTRIBUTING.md file.
 
 ### Getting Started
-To get started with Brender-snippets and Brender Studio, see the [documentation](www.brenderstudio.com/docs). for detailed instructions and tutorials. You'll find everything you need to know about installation, use, and best practices.
+To get started with Brender-snippets and Brender Studio, see the <a href="https://www.brenderstudio.com/docs/guides/getting-started" target="_blank">Documentation</a>. for detailed instructions and tutorials. You'll find everything you need to know about installation, use, and best practices.
 
 ### License
 This repository is licensed under the MIT license. By contributing to this repository, you agree to comply with the terms and conditions outlined in the license.
