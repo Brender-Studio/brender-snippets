@@ -38,7 +38,7 @@ These are the default environment variables that Brender Studio provides for you
 - **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array. Each job uses this index to process its designated chunk of frames.
 
 ### Custom Environment Variables
-If you need to use additional or custom environment variables for your specific use case, you can add them in the `envs` section of the Job Settings in Brender Studio. Click `Add Custom env` and provide the variable name and value.
+If you need to use additional or custom environment variables for your specific use case, you can add them in the `envs` section of the Job Settings in Brender Studio. Click on `Add Custom env` and provide the variable name and value.
 
 **Example:**
 ```plaintext
@@ -46,7 +46,7 @@ CUSTOM_VARIABLE_NAME: custom_value
 ANOTHER_VARIABLE: another_value
 ```
 
->Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using os.environ.get('CUSTOM_VARIABLE_NAME').
+>Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
 
 ## Code:
 The code is distributed across two main files:
