@@ -26,6 +26,8 @@ This script serves as an example of how to utilize Brender Studio’s capability
 ## Job Type:
 - [x] Array
 
+## Envs:
+
 ### Default Environment Variables from Brender Studio
 These are the default environment variables that Brender Studio provides for your jobs:
 
