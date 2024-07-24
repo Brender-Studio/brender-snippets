@@ -25,6 +25,7 @@ This script demonstrates how to utilize Brender Studio's capability to handle cu
 
 ## Job Type:
 - [x] Array
+
 ## Envs:
 
 ### Default Environment Variables from Brender Studio

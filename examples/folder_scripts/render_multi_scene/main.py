@@ -5,10 +5,10 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.scene_setup import setup_multi_scene
-from utils.render_handler import render_scenes
-from utils.aws_batch_utils import get_aws_batch_info
-from config.render_config import RenderConfig
+from render_multi_scene.utils.scene_setup import setup_multi_scene
+from render_multi_scene.utils.render_handler import render_scenes
+from render_multi_scene.utils.aws_batch_utils import get_aws_batch_info
+from render_multi_scene.config.render_config import RenderConfig
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
