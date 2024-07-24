@@ -14,8 +14,8 @@ We recommend using high-quality, royalty-free environment maps. A great resource
 
 Some example environment maps you might consider:
 1. "Metro Vijzelgracht" by Greg Zaal (https://polyhaven.com/a/metro_vijzelgracht)
-2. "Rosendal Plains" by Greg Zaal (https://polyhaven.com/a/rosendal_plains_2)
-3. "Rural Asphalt Road" by Greg Zaal (https://polyhaven.com/a/rural_asphalt_road)
+2. "Rosendal Plains" by Jarod Guest & Dimitrios Savva (https://polyhaven.com/a/rosendal_plains_2)
+3. "Rural Asphalt Road" by Alexander Scholten (https://polyhaven.com/a/rural_asphalt_road)
 
 ## Note
 Ensure you have the rights to use any environment maps you place in this folder. Always check and comply with the licensing terms of the assets you use.
