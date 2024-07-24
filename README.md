@@ -1,9 +1,5 @@
 # Brender Snippets for Brender Studio
 
-<p align="center">
-    <img src="docs/images/logo-brender-studio.svg" alt="Brender Snippets Logo" width="100" />
-</p>
-
 Brender Snippets is an open-source repository of custom scripts designed to enhance your rendering experience with [Brender Studio](https://www.brenderstudio.com), a cloud-based rendering platform for Blender.
 
 
