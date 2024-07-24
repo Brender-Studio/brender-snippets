@@ -38,7 +38,7 @@ With Brender Snippets, you can tap into the collective expertise of the Blender 
 4. Configure the script in Brender Studio's custom script settings
 5. Render your project with enhanced capabilities!
 
-For detailed instructions, visit our [Usage Guide](link_to_usage_guide).
+For detailed instructions, visit our [Usage Guide](/docs/USAGE_GUIDE.md).
 
 ## Contributing
 
@@ -46,7 +46,7 @@ We welcome contributions from the Blender community! To contribute:
 
 1. Fork this repository
 2. Create a new branch for your script
-3. Add your script following our [contribution guidelines](link_to_CONTRIBUTING.md)
+3. Add your script following our [contribution guidelines](/CONTRIBUTING.md )
 4. Submit a pull request
 
 Please ensure your script includes proper documentation and adheres to our code standards.
@@ -81,7 +81,7 @@ If you need help with a script or have questions:
 
 ## License
 
-Brender Snippets is distributed under the MIT license. See the [LICENSE](link_to_LICENSE) file for more details.
+Brender Snippets is distributed under the MIT license. See the [LICENSE](/LICENSE) file for more details.
 
 ---
 
