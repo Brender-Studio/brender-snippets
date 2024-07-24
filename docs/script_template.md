@@ -1,6 +1,8 @@
 # Script Template
 
-# Please fill out the following template for any scripts being added to the brender-snippets repository.
+# Please fill out the following basic template for any scripts being added to the brender-snippets repository.
+
+# You can copy this template and paste it into the new script's README.md file or reference it in the example script's README.md file.
 
 ## Name:
 <!-- Enter the name of the script -->

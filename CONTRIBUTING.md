@@ -1,25 +1,63 @@
-## Code of Conduct Contribution
+# Contributing to Brender Snippets
 
-Thank you for your interest in contributing to our project! To ensure a positive and inclusive community, we have established a code of conduct that all contributors must adhere to. Please follow the guidelines below when submitting your scripts to the template scripts repository on GitHub.
+Thank you for your interest in contributing to Brender Snippets! We welcome contributions from the community to help improve and expand our collection of Blender rendering scripts.
 
-### 1. Detailed Explanation
-Provide a detailed explanation of your code, including its purpose, functionality, and any important considerations. This will help other users understand your script and its potential use cases.
+## How to Contribute
 
-### 2. Code Structure
-Ensure that your code follows a clear and organized structure. Use appropriate indentation, comments, and naming conventions to enhance readability. Consider breaking down your code into logical sections or functions for better maintainability.
+1. Fork the Repository
+2. Create a New Branch
+3. Develop Your Script
+4. Test Your Script
+5. Submit a Pull Request
 
-### 3. References
-If your script is based on or inspired by existing work, please provide proper references or attributions. This helps acknowledge the original authors and avoids any potential copyright issues.
+## Guidelines for Contributions
 
-### 4. Complete Fields
-When uploading your script to the template scripts repository, make sure to fill in all the required fields accurately. This includes the script's name, description, tags, and any additional information requested in the upload template.
+### 1. Script Structure and Documentation
 
-### 5. Testing
-Before submitting your script, test it thoroughly to ensure that it works as intended. Check for errors, bugs, or compatibility issues with different Blender versions. If possible, provide instructions on how to use or test your script effectively.
+- Provide a clear and concise description of your script's purpose and functionality.
+- Include detailed comments within your code to explain complex operations.
+- Use meaningful variable and function names to enhance readability.
+- Structure your code logically, using functions or classes where appropriate.
 
-If you have any questions or need assistance with your script submission, feel free to reach out to the project maintainers or the community for help. We are here to support you and ensure a smooth contribution process.
+### 2. Testing
 
-If you decide not to test the script in the cloud with Brender Studio, due to the expenses that may be involved, no matter how minimal, it is necessary that you test the jobs manually using the DevContainerCdk logic.
+- Test your script thoroughly in Blender to ensure it works as intended.
+- If possible, test with different Blender versions.
+- For scripts intended for use with Brender Studio, test using the [Brender Studio DevContainer](https://github.com/Brender-Studio/brender-studio-devcontainer) logic if cloud testing is not feasible.
+
+### 3. Metadata and Tags
+
+When submitting your script, include the following metadata:
+
+- Script Name
+- Blender Version Compatibility
+- Brief Description
+- Type (e.g., Utility, Example)
+- Usage Instructions
+- Any Dependencies or Requirements
+- Environment Variables Used
+- Job Type (e.g., Array, Single Job)
+- Code Structure (e.g., Single File, Multiple Files) and Project Structure (if applicable)
+- Entry Point (e.g., main.py)
+- Reference Links (videos, tutorials, documentation, etc.)
+- Screenshots or Examples (if applicable)
 
 
-By following these guidelines, you contribute to a collaborative and efficient community where users can easily find and utilize high-quality scripts. Thank you for your contribution!
+### 4. Licensing and Attribution
+
+- Ensure your script is compatible with the MIT License used by Brender Snippets.
+- If your script incorporates or is based on other works, provide proper attribution and ensure compatibility with their licenses.
+
+### 5. Code of Conduct
+
+- Adhere to the Contributor Code of Conduct in all interactions related to Brender Snippets.
+- Be respectful and constructive in discussions and code reviews.
+
+## Submission Process
+
+1. Create a new pull request with your script and documentation.
+2. Provide a clear title and description for your pull request.
+3. Wait for a maintainer to review your submission.
+4. Be prepared to make changes if requested during the review process.
+
+We appreciate your contributions to making Brender Snippets a valuable resource for the Blender community!
