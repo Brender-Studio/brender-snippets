@@ -1,4 +1,4 @@
-# Job Array Animation Renderer With AWS Batch
+# Job Array Animation Renderer With AWS Batch 
 
 ## Name:
 Job Array Animation Renderer
@@ -51,7 +51,7 @@ ANOTHER_VARIABLE: another_value
 ## Code:
 The code is distributed across two main files:
 
-1. `__init__.py` in the project root
+1. `main.py` in the project root
 2. `setup_render_animation.py` in the `utils` folder
 
 
@@ -59,7 +59,7 @@ The code is distributed across two main files:
 ## Project Structure (tree):
 ```
 job_array_animation
-├── __init__.py
+├── main.py
 ├── README.md
 └── utils
     ├── __init__.py
@@ -67,7 +67,7 @@ job_array_animation
 ```
 
 ## Entrypoint:
-The entry point is the `__init__.py` file in the project root directory.
+The entry point is the `main.py` file in the project root directory.
 
 ## Code Description
 
@@ -82,7 +82,7 @@ This file contains functions for setting up the rendering scene, calculating fra
 
 - **`log_render_progress(current_frame, start_frame, end_frame, frame_step)`**: Logs the rendering progress percentage and the current frame details.
 
-### `__init__.py`
+### `main.py`
 This file serves as the main entry point and configures the logging. It also retrieves environment variables, sets up the scene, calculates the frame chunks, and initiates the rendering process.
 
 
