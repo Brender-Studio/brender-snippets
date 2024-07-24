@@ -77,7 +77,7 @@ To use these scripts with Brender Studio:
 
 If you need help with a script or have questions:
 
-- Check our [Brender Snippets documentation](link_to_snippet_docs)
+- Check our [Brender Snippets documentation](/docs/USAGE_GUIDE.md)
 - Join our [Discord community](https://discord.gg/z7sBb4J5r5)
 - Watch tutorials on our [YouTube channel](https://www.youtube.com/channel/UCLDB1QSY2579ynddOXv1G7g)
 
