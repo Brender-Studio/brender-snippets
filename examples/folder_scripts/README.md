@@ -40,6 +40,7 @@ job_array_animation/
 ## Custom Module Imports
 To import custom modules in your scripts, you need to add a specific line of code to handle the Python path. This ensures that all modules are correctly referenced and can be executed within Brender Studio. 
 
+
 ### Import Example
 
 In `__init__.py`, before any custom imports, include the following lines:
@@ -53,7 +54,7 @@ import sys
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from job_array_animation.utils.setup_render_animation import setup_scene, calculate_frame_chunk, render_animation, log_render_progress
+from utils.setup_render_animation import setup_scene, calculate_frame_chunk, render_animation, log_render_progress
 ```
 
 This configuration ensures that the AWS Batch container can locate the Python path and import the necessary modules and avoid conflicts. Contributions are welcome to improve this workflow.

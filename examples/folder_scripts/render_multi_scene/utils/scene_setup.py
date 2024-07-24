@@ -13,6 +13,9 @@ def setup_scene(scene, config):
     scene.render.resolution_x = config.resolution_x
     scene.render.resolution_y = config.resolution_y
     scene.render.image_settings.file_format = config.file_format
+    scene.cycles.samples = config.samples 
+
+    # bpy.context.scene.cycles.device = config.cycles_device # 'CPU' or 'GPU' if you want to use GPU Set this to 'GPU' in RenderConfig (render_config.py)
 
     # Get frame range
     start_frame = scene.frame_start

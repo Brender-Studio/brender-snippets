@@ -7,3 +7,5 @@ class RenderConfig:
         self.resolution_x = 1920
         self.resolution_y = 1080
         self.file_format = 'PNG'
+        # self.cycles_device = 'CPU' # 'CPU' or 'GPU'
+        self.samples = 10
