@@ -62,13 +62,10 @@ def render_multi_hdri(output_directory):
 if __name__ == "__main__":
     logger.info("Script started")
     
-    # Cloud Usage:
+    # Get the environment variables
     blend_file = os.environ.get('EFS_BLENDER_FILE_PATH')
     output_directory = os.environ.get('EFS_BLENDER_OUTPUT_FOLDER_PATH')
     
-    # # Local Usage:
-    # output_directory = "path/to/local/output/directory"
-    # logger.info(f"Output directory set to: {output_directory}")
     
     if not output_directory:
         logger.error("Output directory not specified")
