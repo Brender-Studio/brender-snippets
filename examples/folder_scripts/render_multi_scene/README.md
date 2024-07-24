@@ -63,7 +63,7 @@ ANOTHER_VARIABLE: another_value
 ## Code:
 The code is distributed across multiple files:
 
-1. `__init__.py` in the project root
+1. `main.py` in the project root
 2. `scene_setup.py` in the `utils` folder
 3. `render_handler.py` in the `utils` folder
 4. `aws_batch_utils.py` in the `utils` folder
@@ -72,15 +72,16 @@ The code is distributed across multiple files:
 ## Project Structure (tree):
 ```
 render_multi_scene/
-├── __init__.py
-├── README.md
-├── utils/
-│   ├── __init__.py
-│   ├── scene_setup.py
-│   ├── render_handler.py
-│   └── aws_batch_utils.py
-└── config/
-    └── render_config.py
+  ├── config
+  │   ├── __init__.py
+  │   └── render_config.py
+  ├── main.py
+  ├── README.md
+  └── utils
+      ├── aws_batch_utils.py
+      ├── __init__.py
+      ├── render_handler.py
+      └── scene_setup.py
 ```
 
 ## Entrypoint:

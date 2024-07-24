@@ -46,23 +46,46 @@ In addition to the default variables, this script uses a custom environment vari
 ## Project Structure:
 ```
 render_multi_environment/
-├── __init__.py
-├── README.md
-├── assets/
-│   ├── README.md
-│   └── [environment map files (.hdr, .exr)]
-├── utils/
-│   ├── __init__.py
-│   ├── scene_setup.py
-│   ├── render_handler.py
-│   ├── environment_handler.py
-│   └── aws_batch_utils.py
-└── config/
-    └── render_config.py
+  ├── assets
+  │   ├── metro_vijzelgracht_4k.exr
+  │   ├── README.md
+  │   ├── rosendal_plains_2_4k.exr
+  │   └── rural_asphalt_road_4k.exr
+  ├── config
+  │   ├── __init__.py
+  │   └── render_config.py
+  ├── main.py
+  ├── README.md
+  └── utils
+      ├── aws_batch_utils.py
+      ├── environment_handler.py
+      ├── render_handler.py
+      └── scene_setup.py
 ```
 
 ## Entrypoint:
 The entry point is the `main.py` file in the project root directory.
+
+
+## Usage:
+
+### Step 1: Download the Script
+Download the script and place it in the appropriate directory on your local machine.
+
+### Step 2: Prepare the Environment Maps
+Change the environment maps in the `assets` folder to the desired HDR or EXR files.
+
+### Step 3: Configure the Scene
+Modify the `render_config.py` file in the `config` folder to set up the render settings for the scene.
+
+### Step 4: Upload the Script to Brender Studio
+Upload the script to Brender Studio and configure the job settings as needed to run the script on AWS Render Farm.
+
+### Step 5: Execute the Job
+Submit the job to Brender Studio to start the rendering process with multiple environment maps.
+
+## Reference:
+- [Poly Haven](https://polyhaven.com/hdris)
 
 ## Note:
 This script is intended to be executed as part of an AWS Batch Job Array. Ensure that the necessary environment variables are properly set up and environment map files are placed in the `assets` folder before execution.
