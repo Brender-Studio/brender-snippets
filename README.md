@@ -6,6 +6,7 @@
 
 Brender Snippets is an open-source repository of custom scripts designed to enhance your rendering experience with [Brender Studio](https://www.brenderstudio.com), a cloud-based rendering platform for Blender.
 
+
 > [!NOTE]  
 > Brender Snippets is a community-driven project. We encourage contributions from Blender enthusiasts of all skill levels!
 
@@ -17,6 +18,7 @@ Brender Snippets is a collection of custom scripts that allows you to:
 - Optimize your rendering workflows
 - Share and discover innovative rendering techniques
 - Leverage community knowledge to improve your Blender projects
+
 
 With Brender Snippets, you can tap into the collective expertise of the Blender community to enhance your rendering capabilities.
 

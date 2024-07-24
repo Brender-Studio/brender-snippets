@@ -53,7 +53,7 @@ if __name__ == "__main__":
     
     if not output_directory:
         logger.error("Output directory not specified.")
-        exit()
+        raise ValueError("Output directory not specified.")
     
     render_multi_material(object_name, output_directory)
     logger.info("Multi-material rendering completed.")
