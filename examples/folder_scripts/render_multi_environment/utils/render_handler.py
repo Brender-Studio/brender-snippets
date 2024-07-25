@@ -58,6 +58,8 @@ def generate_output_filename(scene_name, env_name, frame):
 
 
 def log_render_progress(current_frame, start_frame, end_frame, frame_step, total_frames):
+    # Calculate the number of frames that have been rendered so far
     frames_rendered = (current_frame - start_frame) // frame_step + 1
+    # Calculate the percentage of completion
     progress = (frames_rendered / total_frames) * 100
     logging.info(f"Rendering progress: {progress:.2f}% (Frame {current_frame}/{end_frame})")

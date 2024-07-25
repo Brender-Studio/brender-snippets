@@ -89,7 +89,7 @@ Upload the script to Brender Studio and configure the job settings as needed to 
 Submit the job to Brender Studio to start the rendering process with multiple environment maps.
 
 ## Reference:
-- [Poly Haven](https://polyhaven.com/hdris)
+- [Poly Haven HDRI'S](https://polyhaven.com/hdris)
 
 ## Note:
 This script is intended to be executed as part of an AWS Batch Job Array. Ensure that the necessary environment variables are properly set up and environment map files are placed in the `assets` folder before execution.
