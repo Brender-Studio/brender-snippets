@@ -14,7 +14,6 @@ The script is designed to handle both single frame and animation rendering for e
 Key functionalities include:
 - **Multi-Scene Handling**: Processes all scenes within the Blender file.
 - **Scene Configuration**: Sets up each scene's resolution and output format in Blender.
-- **Frame Chunk Calculation**: For animations, computes the frame ranges for each job based on the total animation length and job array size.
 - **Rendering and Logging**: Executes the rendering of frames or animations and logs progress for monitoring job completion.
 
 This script demonstrates how to utilize Brender Studio's capability to handle custom scripts for cloud-based rendering of complex Blender projects with multiple scenes.
@@ -25,6 +24,9 @@ This script demonstrates how to utilize Brender Studio's capability to handle cu
 
 ## Job Type:
 - [x] Array
+
+
+> **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render.py](path/to/example_gpu_render.py) file for guidance.
 
 ## Envs:
 
@@ -101,7 +103,7 @@ This file manages the rendering process for both single frames and animations.
 - **`render_scenes(scenes, config)`**: Handles rendering for all scenes, determining if each is a single frame or animation.
 - **`render_animation(scene, config)`**: Renders animation frames in chunks based on the job array configuration.
 - **`render_frame(scene, config, frame)`**: Renders a single frame from a scene.
-- **`calculate_frame_chunk(array_size, job_index, start_frame, end_frame, frame_step)`**: Computes the frame range for a specific job in the array.
+
 
 ### `aws_batch_utils.py`
 This file provides utility functions for working with AWS Batch.
@@ -113,7 +115,7 @@ This file defines the configuration class for render settings.
 
 - **`RenderConfig`**: A class that holds render configuration settings.
 
-### `__init__.py`
+### `main.py`
 This file serves as the main entry point, orchestrating the entire rendering process.
 
 ## Note:

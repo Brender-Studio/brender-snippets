@@ -16,20 +16,6 @@ script_name/
 - **`README.md`**: Provides a detailed description of the script, including its purpose, usage, and any specific requirements or dependencies.
 - **`script_name.py`**: The main Python script that contains the rendering logic.
 
-## Example Scripts
-Here are some examples of single scripts provided in this directory:
-
-### `render_multi_camera`
-- **`README.md`**: Describes the script and provides instructions for its use.
-- **`render_multi_camera.py`**: A script to render multiple camera angles in Blender.
-
-### `render_multi_hdri`
-- **`README.md`**: Describes the script and provides instructions for its use.
-- **`render_multi_hdri.py`**: A script to render scenes with multiple HDRI environments in Blender.
-
-### `render_multi_material`
-- **`README.md`**: Describes the script and provides instructions for its use.
-- **`render_multi_material.py`**: A script to render objects with multiple materials in Blender.
 
 ## Usage
 1. Navigate to the desired script folder.
