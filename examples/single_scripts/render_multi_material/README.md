@@ -14,12 +14,15 @@ Render multiple images of an object with different materials applied.
 - `material_names`: A list of material names to apply to the object.
 
 ## Use case:
-- [x] Utility
+- [ ] Utility
 - [x] Example
 
 ## Job type:
 - [ ] Array
 - [x] Single job
+
+## Entry point:
+`render_multi_material.py`
 
 ## Envs:
 
@@ -46,9 +49,4 @@ To use this script:
 4. Set the `output_directory` to your desired output location.
 
 
-### Use cases:
-1. Product Design: Quickly visualize a product with different materials or finishes.
-2. Architecture: See how different materials affect the look of architectural elements.
-3. Character Design: Test various skin, clothing, or armor materials on a character model.
 
-The script will apply each material to the object, render an image, and then move on to the next material. After all renders are complete, it will restore the original material to the object.

@@ -90,6 +90,3 @@ Submit the job to Brender Studio to start the rendering process with multiple en
 ## Note:
 This script is intended to be executed as part of an AWS Batch Job Array. Ensure that the necessary environment variables are properly set up and environment map files are placed in the `assets` folder before execution.
 
-## Tags:
-#blender #aws-batch #job-array #multi-environment-rendering #distributed-rendering
-

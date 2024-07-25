@@ -3,11 +3,11 @@ import os
 import logging
 import sys
 
+# Add the project directory to the sys.path before importing any modules
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-logging.info(f"Current working directory: {os.getcwd()}")
-logging.info(f"Appending to sys.path: {PROJECT_DIR}")
-
+if PROJECT_DIR not in sys.path:
+    sys.path.append(PROJECT_DIR)
+    
 
 if PROJECT_DIR not in sys.path:
     sys.path.append(PROJECT_DIR)
