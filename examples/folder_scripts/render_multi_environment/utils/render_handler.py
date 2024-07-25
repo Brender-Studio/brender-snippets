@@ -16,6 +16,7 @@ def render_scene_with_environments(scene_config, config, environments):
             render_frame(scene_config, config, env_name)
 
 
+
 def render_animation(scene_config, config, env_name):
     start_frame = scene_config['start_frame']
     end_frame = scene_config['end_frame']
@@ -25,15 +26,15 @@ def render_animation(scene_config, config, env_name):
     bpy.context.scene.frame_end = end_frame
     bpy.context.scene.frame_step = frame_step
     
+    # If You want use bpy.ops.render(animation=True) to render all frames at once use this code and comment the loop below
+    # bpy.ops.render.render(animation=True)
+    
     total_frames = (end_frame - start_frame) // frame_step + 1
 
-    # Loop for register custom progress and render each frame
-    for frame in range(start_frame, end_frame + 1, frame_step):
+    for frame in range(start_frame, end_frame + 1, frame_step): # Loop for register custom progress and render each frame
         render_frame(scene_config, config, env_name, frame)
         log_render_progress(frame, start_frame, end_frame, frame_step, total_frames)
         
-    # If You want use bpy.ops.render(animation=True) to render all frames at once use this code and comment the loop above
-    # bpy.ops.render.render(animation=True)
 
 
 def render_frame(scene_config, config, env_name, frame=None):
@@ -46,7 +47,8 @@ def render_frame(scene_config, config, env_name, frame=None):
     bpy.context.scene.render.filepath = output_path
     bpy.ops.render.render(write_still=True)
     
-    logging.info(f"Rendered {output_file}")
+    logging.info(f"Rendered frame: {frame} - Scene: {scene_config['name']} - File Rendered: {output_path}")
+
 
 
 def generate_output_filename(scene_name, env_name, frame):
