@@ -11,6 +11,8 @@ This script facilitates distributed animation rendering using AWS Batch Job Arra
 
 Designed as a custom script for <a href="https://www.brenderstudio.com" target="_blank">Brender Studio</a>, this example demonstrates how to configure and execute a distributed rendering workflow. The script sets up the rendering parameters in Blender, calculates the frame ranges for each job, and manages the rendering process across all jobs in the array.
 
+> Este script de animacion, esta pensado para renderizar con CPU.
+
 
 Key functionalities include:
 - **Scene Configuration**: Sets up the scene’s resolution and output format in Blender.
@@ -18,6 +20,9 @@ Key functionalities include:
 - **Rendering and Logging**: Executes the rendering of frames in chunks and logs progress for monitoring job completion.
 
 This script serves as an example of how to utilize Brender Studio’s capability to handle custom scripts for cloud-based animation rendering.
+
+<!-- Blocquote: -->
+
 
 ## Type:
 - [x] Example
@@ -46,7 +51,7 @@ CUSTOM_VARIABLE_NAME: custom_value
 ANOTHER_VARIABLE: another_value
 ```
 
->Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
+> Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
 
 ## Code:
 The code is distributed across two main files:
@@ -95,6 +100,3 @@ N/A
 
 ## Screenshots:
 N/A
-
-## Tags:
-#blender #aws-batch #job-array #animation-rendering #distributed-rendering

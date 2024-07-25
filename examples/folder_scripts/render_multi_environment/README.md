@@ -26,6 +26,10 @@ This script demonstrates how to utilize Brender Studio's capability to handle cu
 ## Job Type:
 - [x] Array
 
+
+> **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render.py](path/to/example_gpu_render.py) file for guidance.
+
+
 ## Envs:
 
 ### Default Environment Variables from Brender Studio
@@ -89,7 +93,4 @@ Submit the job to Brender Studio to start the rendering process with multiple en
 
 ## Note:
 This script is intended to be executed as part of an AWS Batch Job Array. Ensure that the necessary environment variables are properly set up and environment map files are placed in the `assets` folder before execution.
-
-## Tags:
-#blender #aws-batch #job-array #multi-environment-rendering #distributed-rendering
 

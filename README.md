@@ -20,7 +20,6 @@ With Brender Snippets, you can tap into the collective expertise of the Blender 
 
 ## Key Features
 
-- Wide range of script categories (e.g., optimization, post-processing, scene setup)
 - Compatible with Brender Studio's custom script feature
 - Easy-to-use structure for both contributors and users
 - Detailed documentation for each script
@@ -49,25 +48,6 @@ We welcome contributions from the Blender community! To contribute:
 
 Please ensure your script includes proper documentation and adheres to our code standards.
 
-## Script Categories
-
-- Render Optimization
-- Post-Processing Effects
-- Scene Setup Automation
-- Asset Management
-- Render Farm Utilities
-- And more!
-
-## Getting Started with Brender Studio
-
-To use these scripts with Brender Studio:
-
-1. [Create an AWS account](https://www.brenderstudio.com/docs/guides/prerequisites)
-2. [Set up AWS CLI v2 on your local machine](https://www.brenderstudio.com/docs/guides/install-aws-cli)
-3. [Download and install Brender Studio](https://www.brenderstudio.com/download)
-4. [Connect Brender Studio with your AWS account](https://www.brenderstudio.com/docs/guides/install-brender-studio)
-5. [Deploy your render farm](https://www.brenderstudio.com/docs/guides/deploy-first-farm)
-6. [Start rendering with custom scripts!](https://www.brenderstudio.com/docs/guides/your-first-render)
 
 ## Support
 
