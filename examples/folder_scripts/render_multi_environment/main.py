@@ -18,10 +18,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 def main():
     # Get AWS Batch job info
-    output_path, array_size, job_index, render_type = get_aws_batch_info()
+    output_path, render_type = get_aws_batch_info()
     
     # Create Render Settings
-    config = RenderConfig(output_path, array_size, job_index, render_type)
+    config = RenderConfig(output_path, render_type)
     
     # Load environments from assets folder
     environments = load_environments(os.path.join(PROJECT_DIR, 'render_multi_environment/assets'))

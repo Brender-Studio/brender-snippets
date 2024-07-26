@@ -1,11 +1,7 @@
 # Multi-Environment Blender Renderer for AWS Batch
 
-
 ## Author:
-© 2024 Brender Studio
-
-## Name:
-Multi-Environment Blender Renderer
+Brender Studio
 
 ## Blender Version:
 Blender 4.2 (LTS)
@@ -57,33 +53,21 @@ render_multi_environment/
 - [x] Single job
 
 
-> **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render](/examples/single_scripts/example_gpu_render/render_gpu.py) file for guidance.
-
 
 ## Envs:
 
 ### Default ENVS
 These are the default environment variables that Brender Studio provides for your jobs:
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
-| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
-| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
-| **USE_EEVEE**                      | False                     | Default     |
-| **USE_GPU**                        | False                     | Default     |
-| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
-| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
+| **Key**                            | **Value**                 | **Env Type**   |
+| ---------------------------------- | ------------------------- | -------------- |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Brender Studio |
 
 
-- **`AWS_BATCH_JOB_ARRAY_SIZE`**: Indicates the total number of jobs in the array.
-- **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array.
 
 ### Custom ENV
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **<RENDER_TYPE>**                  | **<CUSTOM_VALUE>**        | Custom      |
+| **Key**                            | **Value**                 | **Env Type** |
+| ---------------------------------- | ------------------------- | ------------ |
+| **<RENDER_TYPE>**                  | **<CUSTOM_VALUE>**        | Custom       |
 
 - **`RENDER_TYPE`**: Determines whether to render a single frame or an animation. Possible values are:
   - `'auto'` (default): Automatically determines based on the scene's frame range.
@@ -91,28 +75,13 @@ These are the default environment variables that Brender Studio provides for you
   - `'animation'`: Forces rendering as an animation.
 
 
-## Usage:
+> **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render](/examples/single_scripts/example_gpu_render/render_gpu.py) file for guidance.
 
-### Step 1: Download the Script
-Download the script and place it in the appropriate directory on your local machine.
-
-### Step 2: Prepare the Environment Maps
-Change the environment maps in the `assets` folder to the desired HDR or EXR files.
-
-### Step 3: Configure the Scene
-- Modify the `render_config.py` file in the `config` folder to set up the render settings for the scene.
-- Modify the `render_handler.py` file to add a custom frame/animation calculation function based on the AWS Batch job array, in order to parallelize the rendering of scenes with different environments.
-
-### Step 4: Upload the Script to Brender Studio
-Upload the script to Brender Studio and configure the job settings as needed to run the script on AWS Render Farm.
-
-### Step 5: Execute the Job
-Submit the job to Brender Studio to start the rendering process with multiple environment maps.
 
 ## Reference:
-- [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/job_env_vars.html)
-- [Blender Documentation](https://docs.blender.org/manual/en/latest/)
 - [Poly Haven HDRI'S](https://polyhaven.com/hdris)
+- [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/job_env_vars.html)
+- [Dev Container to Test](https://github.com/Brender-Studio/brender-studio-devcontainer)
 
 
 

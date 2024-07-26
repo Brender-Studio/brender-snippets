@@ -1,10 +1,7 @@
 # Job Array Animation Renderer With AWS Batch 
 
 ## Author:
-© 2024 Brender Studio
-
-## Name:
-Job Array Animation Renderer
+ 2024 Brender Studio
 
 ## Blender Version:
 Blender 4.2 (LTS)
@@ -46,37 +43,17 @@ job_array_animation
 - [ ] Single job
 
 ## Envs:
+Use default environment variables provided by Brender Studio and AWS Batch.
 
-### Default ENVS
-These are the default environment variables that Brender Studio provides for your jobs:
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
-| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
-| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
-| **USE_EEVEE**                      | False                     | Default     |
-| **USE_GPU**                        | False                     | Default     |
-| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
-| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
-
+| **Key**                            | **Value**                             | **Env Type**   |
+| ---------------------------------- | ------------------------------------- | -------------- |
+| **AWS_BATCH_JOB_ARRAY_SIZE**       | **<FORM_VALUE_BRENDER_STUDIO>**       | AWS Batch      |
+| **AWS_BATCH_JOB_ARRAY_INDEX**      | **AUTO (0,1,2,...) **                 | AWS Batch      |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects/PROJECT_NAME/output | Brender-Studio |
 
 - **`AWS_BATCH_JOB_ARRAY_SIZE`**:  Indicates the total number of jobs in the array. This helps in dividing the animation into chunks for each job. This variable is set automatically by AWS Batch and defines the size of the job array.
 
 - **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array. Each job uses this index to process its designated chunk of frames. This variable is also set automatically by AWS Batch and is used to identify which portion of the animation each job should render.
-
-
-### Custom Environment Variables
-If you need to use additional or custom environment variables for your specific use case, you can add them in the `envs` section of the Job Settings in Brender Studio. Click on `Add Custom env` and provide the variable name and value.
-
-### Custom ENV
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **<KEY_CUSTOM_ENV>**               | **<CUSTOM_VALUE>**        | Custom      |
-
-
-> Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
 
 
 ## AWS Batch Environment Variables, Detailed Explanation:

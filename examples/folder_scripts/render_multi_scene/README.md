@@ -2,10 +2,7 @@
 
 
 ## Author:
-© 2024 Brender Studio
-
-## Name:
-Multi-Scene Blender Renderer
+Brender Studio
 
 ## Blender Version:
 Blender 4.2 (LTS)
@@ -40,21 +37,11 @@ The entry point is the `main.py` file in the project root directory.
 
 ### Default ENVS
 These are the default environment variables that Brender Studio provides for your jobs:
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
-| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
-| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
-| **USE_EEVEE**                      | False                     | Default     |
-| **USE_GPU**                        | False                     | Default     |
-| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
-| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
+| **Key**                            | **Value**                 | **Env Type**   |
+| ---------------------------------- | ------------------------- | -------------- |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Brender Studio |
 
 
-- **`AWS_BATCH_JOB_ARRAY_SIZE`**: Indicates the total number of jobs in the array.
-- **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array.
 
 ### Custom ENV
 | **Key**                            | **Value**                 | **Actions** |
@@ -85,15 +72,6 @@ render_multi_scene/
       └── scene_setup.py
 ```
 
-## Usage:
-1. Set up your Blender file with multiple scenes.
-2. Configure the scenes'.
-3. Modify the script to handle custom scene configurations if needed.
-4. Modify the `render_handler.py` file to add a custom frame/animation calculation function based on the AWS Batch job array, in order to parallelize the rendering of multiple scenes.
-4. Run the script to render all scenes in the Brender Studio or Brender Studio DevContainer environment.
-
-
-## References (video, repo):
-- [Blender Documentation](https://docs.blender.org/manual/en/latest/)
+## References:
 - [Dev Container to Test](https://github.com/Brender-Studio/brender-studio-devcontainer)
 
