@@ -25,16 +25,17 @@ Thank you for your interest in contributing to Brender Snippets! We welcome cont
 - If possible, test with different Blender versions.
 - For scripts intended for use with Brender Studio, test using the [Brender Studio DevContainer](https://github.com/Brender-Studio/brender-studio-devcontainer) logic if cloud testing is not feasible.
 
-### 3. Metadata and Tags
+### 3. Metadata and Documentation
 
-When submitting your script, include the following metadata:
+When submitting your script, include the following metadata and documentation in the README.md file:
 
+- Purpose
 - Script Name
 - Blender Version Compatibility
 - Brief Description
+- Detailed Description
 - Type (e.g., Utility, Example)
 - Usage Instructions
-- Any Dependencies or Requirements
 - Environment Variables Used
 - Job Type (e.g., Array, Single Job)
 - Code Structure (e.g., Single File, Multiple Files) and Project Structure (if applicable)
@@ -42,10 +43,12 @@ When submitting your script, include the following metadata:
 - Reference Links (videos, tutorials, documentation, etc.)
 - Screenshots or Examples (if applicable)
 
+You can use the provided [script template](../docs/script_template.md) as a starting point for your documentation.
+
 
 ### 4. Licensing and Attribution
 
-- Ensure your script is compatible with the MIT License used by Brender Snippets.
+- Ensure your script is compatible with the GPL License used by Brender Snippets.
 - If your script incorporates or is based on other works, provide proper attribution and ensure compatibility with their licenses.
 
 ### 5. Code of Conduct
