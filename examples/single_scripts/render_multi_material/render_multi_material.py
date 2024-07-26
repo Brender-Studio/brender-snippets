@@ -6,51 +6,59 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def render_multi_material(object_name, output_directory):
-    
-    # Get the object
-    obj = bpy.data.objects.get(object_name)
+def get_environment_variable(var_name):
+    """Retrieve the environment variable or raise an error if not found."""
+    value = os.environ.get(var_name)
+    if value is None:
+        logger.error(f"{var_name} environment variable is not set")
+        raise ValueError(f"{var_name} environment variable is not set")
+    return value
+
+def get_object_by_name(name):
+    """Retrieve an object by name from the Blender scene."""
+    obj = bpy.data.objects.get(name)
     if obj is None:
-        logger.error(f"Object '{object_name}' not found in the scene.")
+        logger.error(f"Object '{name}' not found in the scene.")
+    return obj
+
+def render_with_material(obj, material, output_directory, base_material):
+    """Apply a material to the object, render, and save the result."""
+    obj.active_material = material
+    logger.info(f"Applied material: {material.name}")
+    
+    output_path = os.path.join(output_directory, f"{obj.name}_{material.name}.png")
+    bpy.context.scene.render.filepath = output_path
+    
+    logger.info(f"Starting render with material: {material.name}")
+    bpy.ops.render.render(write_still=True)
+    logger.info(f"Render saved to: {output_path}")
+
+def render_multi_material(object_name, output_directory):
+    """Main function to render images with different materials applied to an object."""
+    obj = get_object_by_name(object_name)
+    if obj is None:
         return
     
-    # Get the original material
     original_material = obj.active_material
     
-    # Get all materials in the scene
     all_materials = bpy.data.materials
     logger.info(f"Found {len(all_materials)} materials in the scene.")
     
-    # Loop through each material and render
     for material in all_materials:
-        # Apply the material to the object
-        obj.active_material = material
-        logger.info(f"Applied material: {material.name}")
-        
-        # Set the output path
-        output_path = os.path.join(output_directory, f"{object_name}_{material.name}.png")
-        bpy.context.scene.render.filepath = output_path
-        
-        # Render
-        logger.info(f"Starting render with material: {material.name}")
-        bpy.ops.render.render(write_still=True)
-        logger.info(f"Render saved to: {output_path}")
+        render_with_material(obj, material, output_directory, original_material)
     
-    # Restore the original material
     obj.active_material = original_material
     logger.info("Original material restored")
 
-if __name__ == "__main__":
+def main():
+    """Main function to handle environment variables and execute rendering."""
     logger.info("Script started...")
     
-    # Get environment variables
-    object_name = os.environ['EFS_BLENDER_OBJECT_NAME']
-    output_directory = os.environ['EFS_BLENDER_OUTPUT_FOLDER_PATH']
-    
-   
-    if not output_directory:
-        logger.error("Output directory not specified.")
-        raise ValueError("Output directory not specified.")
+    object_name = get_environment_variable('BLENDER_OBJECT_NAME')
+    output_directory = get_environment_variable('EFS_BLENDER_OUTPUT_FOLDER_PATH')
     
     render_multi_material(object_name, output_directory)
     logger.info("Multi-material rendering completed.")
+
+if __name__ == "__main__":
+    main()

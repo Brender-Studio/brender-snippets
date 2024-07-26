@@ -24,16 +24,26 @@ Render multiple images of an object with different materials applied.
 ## Entry point:
 `render_multi_material.py`
 
+
 ## Envs:
 
-### Default environment variables:
-Use default environment variables by Brender Studio:
-- EFS_BLENDER_OUTPUT_PATH
-- EFS_BLENDER_FILE_PATH
+### Default ENVS
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
+| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
+| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
+| **USE_EEVEE**                      | False                     | Default     |
+| **USE_GPU**                        | False                     | Default     |
+| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
+| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
 
-
-### Custom environment variables:
-- [x] EFS_BLENDER_OBJECT_NAME
+### Custom ENV
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **BLENDER_OBJECT_NAME**            | <OBJECT_NAME>             | Default     |
 
 
 ## Code:
