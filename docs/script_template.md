@@ -79,7 +79,7 @@ Indicate the type of job the script performs
 | **<KEY_CUSTOM_ENV>** | **<CUSTOM_VALUE>** | Custom       |
 
 
-> NOTE: NOTE: Only mention Envs used in your script.
+> NOTE: Only mention Envs used in your script.
 
 ## Usage (optional):
 
