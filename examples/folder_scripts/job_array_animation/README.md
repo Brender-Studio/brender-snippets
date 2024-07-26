@@ -11,17 +11,13 @@ This script facilitates distributed animation rendering using AWS Batch Job Arra
 
 Designed as a custom script for <a href="https://www.brenderstudio.com" target="_blank">Brender Studio</a>, this example demonstrates how to configure and execute a distributed rendering workflow. The script sets up the rendering parameters in Blender, calculates the frame ranges for each job, and manages the rendering process across all jobs in the array.
 
-> Este script de animacion, esta pensado para renderizar con CPU.
+> **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render](/examples/single_scripts/example_gpu_render/render_gpu.py) file for guidance.
 
 
 Key functionalities include:
 - **Scene Configuration**: Sets up the scene’s resolution and output format in Blender.
 - **Frame Chunk Calculation**: Computes the frame ranges for each job based on the total animation length and job array size.
 - **Rendering and Logging**: Executes the rendering of frames in chunks and logs progress for monitoring job completion.
-
-This script serves as an example of how to utilize Brender Studio’s capability to handle custom scripts for cloud-based animation rendering.
-
-<!-- Blocquote: -->
 
 
 ## Type:
