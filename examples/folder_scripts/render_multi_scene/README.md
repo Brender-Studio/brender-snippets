@@ -1,5 +1,9 @@
 # Multi-Scene Blender Renderer for AWS Batch
 
+
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 Multi-Scene Blender Renderer
 
@@ -11,65 +15,60 @@ This script facilitates distributed rendering of multiple scenes from a Blender 
 
 The script is designed to handle both single frame and animation rendering for each scene in the Blender file. It sets up the rendering parameters, calculates frame ranges for animations, and manages the rendering process across all jobs in the array.
 
-Key functionalities include:
+## Key features:
 - **Multi-Scene Handling**: Processes all scenes within the Blender file.
 - **Scene Configuration**: Sets up each scene's resolution and output format in Blender.
 - **Rendering and Logging**: Executes the rendering of frames or animations and logs progress for monitoring job completion.
 
 This script demonstrates how to utilize Brender Studio's capability to handle custom scripts for cloud-based rendering of complex Blender projects with multiple scenes.
 
-## Type:
+## Entrypoint:
+The entry point is the `main.py` file in the project root directory.
+
+## Use Case:
 - [x] Example
 - [x] Utility
 
 ## Job Type:
 - [x] Array
+- [x] Single job
 
 
 > **Note**: This script is designed for CPU-based rendering, ensuring compatibility with a wide range of AWS instance types. If you wish to utilize GPU-based rendering, please create a custom function to enable GPU support. Refer to the example provided in the [example_gpu_render](/examples/single_scripts/example_gpu_render/render_gpu.py) file for guidance.
 
 ## Envs:
 
-### Default Environment Variables from Brender Studio
+### Default ENVS
 These are the default environment variables that Brender Studio provides for your jobs:
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
+| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
+| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
+| **USE_EEVEE**                      | False                     | Default     |
+| **USE_GPU**                        | False                     | Default     |
+| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
+| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
 
-- **`EFS_BLENDER_OUTPUT_FOLDER_PATH`**: Specifies the output path where the rendered frames will be saved. Ensure this path is accessible to all jobs in the array.
-  
-- **`AWS_BATCH_JOB_ARRAY_SIZE`**: Indicates the total number of jobs in the array. This helps in dividing animations into chunks for each job.
-  
-- **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array. Each job uses this index to process its designated chunk of frames.
 
-### Custom Environment Variables
-In addition to the default variables, this script uses a custom environment variable to control the rendering behavior:
+- **`AWS_BATCH_JOB_ARRAY_SIZE`**: Indicates the total number of jobs in the array.
+- **`AWS_BATCH_JOB_ARRAY_INDEX`**: Represents the index of the current job within the array.
+
+### Custom ENV
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **<RENDER_TYPE>**                  | **<CUSTOM_VALUE>**        | Custom      |
 
 - **`RENDER_TYPE`**: Determines whether to render a single frame or an animation. Possible values are:
-  - `'auto'` (default): Automatically determines whether to render a single frame or animation based on the scene's frame range.
-  - `'frame'`: Forces rendering of a single frame, even if the scene has multiple frames defined.
-  - `'animation'`: Forces rendering as an animation, even if the scene has only one frame defined.
+  - `'auto'` (default): Automatically determines based on the scene's frame range.
+  - `'frame'`: Forces rendering of a single frame.
+  - `'animation'`: Forces rendering as an animation.
 
-If you need to use additional custom environment variables for your specific use case, you can add them in the `envs` section of the Job Settings in Brender Studio. Click on `Add Custom env` and provide the variable name and value.
-
-**Example:**
-```plaintext
-RENDER_TYPE: auto
-CUSTOM_VARIABLE_NAME: custom_value
-ANOTHER_VARIABLE: another_value
-**Example:**
-```plaintext
-CUSTOM_VARIABLE_NAME: custom_value
-ANOTHER_VARIABLE: another_value
-```
 
 >Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
 
-## Code:
-The code is distributed across multiple files:
-
-1. `main.py` in the project root
-2. `scene_setup.py` in the `utils` folder
-3. `render_handler.py` in the `utils` folder
-4. `aws_batch_utils.py` in the `utils` folder
-5. `render_config.py` in the `config` folder
 
 ## Project Structure (tree):
 ```
@@ -86,46 +85,15 @@ render_multi_scene/
       └── scene_setup.py
 ```
 
-## Entrypoint:
-The entry point is the `__init__.py` file in the project root directory.
+## Usage:
+1. Set up your Blender file with multiple scenes.
+2. Configure the scenes'.
+3. Modify the script to handle custom scene configurations if needed.
+4. Modify the `render_handler.py` file to add a custom frame/animation calculation function based on the AWS Batch job array, in order to parallelize the rendering of multiple scenes.
+4. Run the script to render all scenes in the Brender Studio or Brender Studio DevContainer environment.
 
-## Code Description
-
-### `scene_setup.py`
-This file contains functions for setting up multiple scenes from the Blender file.
-
-- **`setup_multi_scene(config)`**: Configures all scenes in the Blender file with the specified settings.
-- **`setup_scene(scene, config)`**: Sets up an individual scene with render settings and frame range.
-
-### `render_handler.py`
-This file manages the rendering process for both single frames and animations.
-
-- **`render_scenes(scenes, config)`**: Handles rendering for all scenes, determining if each is a single frame or animation.
-- **`render_animation(scene, config)`**: Renders animation frames in chunks based on the job array configuration.
-- **`render_frame(scene, config, frame)`**: Renders a single frame from a scene.
-
-
-### `aws_batch_utils.py`
-This file provides utility functions for working with AWS Batch.
-
-- **`get_aws_batch_info()`**: Retrieves and processes AWS Batch environment variables.
-
-### `render_config.py`
-This file defines the configuration class for render settings.
-
-- **`RenderConfig`**: A class that holds render configuration settings.
-
-### `main.py`
-This file serves as the main entry point, orchestrating the entire rendering process.
-
-## Note:
-This script is intended to be executed as part of an AWS Batch Job Array. Ensure that the necessary environment variables are properly set up before execution, otherwise the job will fail.
 
 ## References (video, repo):
-N/A
+- [Blender Documentation](https://docs.blender.org/manual/en/latest/)
+- [Dev Container to Test](https://github.com/Brender-Studio/brender-studio-devcontainer)
 
-## Screenshots:
-N/A
-
-## Tags:
-#blender #aws-batch #job-array #multi-scene-rendering #distributed-rendering

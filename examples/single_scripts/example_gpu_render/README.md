@@ -1,5 +1,8 @@
 # Enable GPUs for Rendering in AWS Batch
 
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 Enable GPUs for Rendering
 

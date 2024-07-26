@@ -1,5 +1,8 @@
 # Render Multi HDRI 
 
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 `render_multi_hdri`
 

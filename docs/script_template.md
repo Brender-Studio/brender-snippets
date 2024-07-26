@@ -4,6 +4,9 @@ Please fill out the following basic template for any scripts being added to the 
 
 You can copy this template and paste it into the new script's `README.md` file or reference it in the example script's `README.md` file.
 
+## Author:
+<!-- Enter the author's name -->
+
 ## Name:
 <!-- Enter the name of the script -->
 
@@ -55,11 +58,15 @@ You can copy this template and paste it into the new script's `README.md` file o
 | ---------------------------------- | ------------------------- | ----------- |
 | **<KEY_CUSTOM_ENV>**               | **<CUSTOM_VALUE>**        | Custom      |
 
-## Note:
+
+## Usage (optional):
+<!-- Provide instructions on how to use the script -->
+
+## Note(optional):
 <!-- Any additional notes about the script -->
 
 ## References:
 <!-- Provide references like videos or related repositories -->
 
-## Screenshots:
+## Screenshots(optional):
 <!-- Include relevant screenshots -->

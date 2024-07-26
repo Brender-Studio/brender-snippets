@@ -1,5 +1,8 @@
 # Job Array Animation Renderer With AWS Batch 
 
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 Job Array Animation Renderer
 
@@ -91,4 +94,5 @@ This script is intended to be executed as part of an AWS Batch Job Array. Ensure
 
 ## References:
 - [AWS Batch Job Array Documentation](https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html)
+- [AWS Batch Environment Variables](https://docs.aws.amazon.com/batch/latest/userguide/job_env_vars.html)
 - [Brender Studio Documentation](https://brenderstudio.com/docs)

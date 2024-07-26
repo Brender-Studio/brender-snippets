@@ -13,7 +13,7 @@ script_name/
 ```
 
 ### Explanation of Files
-- **`README.md`**: Provides a detailed description of the script, including its purpose, usage, and any specific requirements or dependencies.
+- **`README.md`**: Provides a detailed description of the script, you can see the [template](../../docs/script_template.md) for more information.
 - **`script_name.py`**: The main Python script that contains the rendering logic.
 
 

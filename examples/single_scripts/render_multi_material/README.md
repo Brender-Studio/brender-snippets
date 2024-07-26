@@ -1,5 +1,8 @@
 # Render Multi-Material
 
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 render_multi_material
 
