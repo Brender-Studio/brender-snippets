@@ -17,7 +17,7 @@ Thank you for your interest in contributing to Brender Snippets! We welcome cont
 - **Purpose and Functionality**: Provide a clear and concise description of your script's purpose and what it does.
 - **Code Comments**: Include detailed comments within your code to explain complex operations and logic.
 - **Readability**: Use meaningful variable and function names to enhance readability. Structure your code logically with functions or classes where appropriate.
-- **Documentation**: Use the provided [script template](../docs/script_template.md) for documenting your script.
+- **Documentation**: Use the provided [script template](docs/script_template.md) for documenting your script.
 
 ### 2. Testing
 
@@ -28,7 +28,7 @@ Thank you for your interest in contributing to Brender Snippets! We welcome cont
 
 ### 3. Metadata and Documentation
 
-When submitting your script, ensure that the `README.md` file adheres to the [script template](../docs/script_template.md). Specifically, include:
+When submitting your script, ensure that the `README.md` file adheres to the [script template](docs/script_template.md). Specifically, include:
 
 - **Author**: Provide your name or username.
 - **Name**: Enter the name of the script.
