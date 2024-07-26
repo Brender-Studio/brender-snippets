@@ -3,9 +3,6 @@
 ## Author:
 Brender Studio
 
-## Name:
-`render_multi_hdri`
-
 ## Blender Version:
 4.2.0 (LTS)
 
