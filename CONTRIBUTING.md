@@ -25,23 +25,27 @@ Thank you for your interest in contributing to Brender Snippets! We welcome cont
 - **Blender Versions**: If possible, test your script with different Blender versions to ensure compatibility.
 - **Brender Studio**: For scripts intended for Brender Studio, test using the [Brender Studio DevContainer](https://github.com/Brender-Studio/brender-studio-devcontainer) if cloud testing is not feasible.
 
+
 ### 3. Metadata and Documentation
 
 When submitting your script, ensure that the `README.md` file adheres to the [script template](../docs/script_template.md). Specifically, include:
 
+- **Author**: Provide your name or username.
 - **Name**: Enter the name of the script.
 - **Blender Version**: Specify the Blender version compatible with the script.
-- **Purpose**: Briefly describe the purpose of the script.
 - **Script Description**: Briefly describe what the script does.
 - **Detailed Description**: Provide a detailed description of the script's functionality.
 - **Key Features and Parameters** (optional): List the key features and parameters of the script.
 - **Project Structure (tree)**: Provide the project structure (a single script or project folder).
 - **Entrypoint**: Define the entry point of the script.
-- **Type**: Indicate whether it’s a utility or an example.
+- **Use Case**: Indicate whether it’s a utility or an example.
 - **Job Type**: Indicate the type of job the script performs (Array or Single job).
 - **Envs**: Document the environment variables used by the script, including default and custom environment variables.
+- **Usage** (optional): Provide instructions on how to use the script.
+- **Note** (optional): Any additional notes about the script.
 - **References**: Provide references like videos or related repositories.
-- **Screenshots**: Include relevant screenshots if applicable.
+- **Screenshots** (optional): Include relevant screenshots if applicable.
+
 
 ### 4. Licensing and Attribution
 
