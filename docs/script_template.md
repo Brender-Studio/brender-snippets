@@ -5,36 +5,36 @@ Please fill out the following basic template for any scripts being added to the 
 You can copy this template and paste it into the new script's `README.md` file or reference it in the example script's `README.md` file.
 
 ## Author:
-<!-- Enter the author's name -->
+Enter the author's name
 
 ## Name:
-<!-- Enter the name of the script -->
+Enter the name of the script
 
 ## Blender Version:
-<!-- Specify the Blender version compatible with the script -->
+Specify the Blender version compatible with the script
 
 ## Script Description:
-<!-- Briefly describe what the script does -->
+Briefly describe what the script does
 
 ## Detailed Description (optional):
-<!-- Provide a detailed description of the script's functionality -->
+Provide a detailed description of the script's functionality
 
 ## Key Features and Parameters (optional):
-<!-- List the key features and parameters of the script -->
+List the key features and parameters of the script
 
 ## Project Structure (tree):
-<!-- Provide the project structure (a single script or project folder) -->
+Provide the project structure (a single script or project folder)
 
 ## Entrypoint:
-<!-- Define the entry point of the script -->
+Define the entry point of the script
 
 ## Use Case:
-<!-- Indicate the use case of the script -->
+Indicate the use case of the script
 - [ ] Utility
 - [ ] Example
 
 ## Job Type:
-<!-- Indicate the type of job the script performs -->
+Indicate the type of job the script performs
 - [ ] Array
 - [ ] Single job
 
@@ -60,13 +60,13 @@ You can copy this template and paste it into the new script's `README.md` file o
 
 
 ## Usage (optional):
-<!-- Provide instructions on how to use the script -->
+Provide instructions on how to use the script
 
 ## Note(optional):
-<!-- Any additional notes about the script -->
+Any additional notes about the script
 
 ## References:
-<!-- Provide references like videos or related repositories -->
+Provide references like videos or related repositories
 
 ## Screenshots(optional):
-<!-- Include relevant screenshots -->
+Include relevant screenshots
