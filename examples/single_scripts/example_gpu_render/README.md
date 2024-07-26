@@ -1,10 +1,8 @@
 # Enable GPUs for Rendering in AWS Batch
 
 ## Author:
-© 2024 Brender Studio
+Brender Studio
 
-## Name:
-Enable GPUs for Rendering
 
 ## Blender Version:
 4.2 (LTS)
@@ -26,17 +24,11 @@ This script enables the use of GPUs for rendering in Blender using Brender Studi
 ## Envs:
 
 ### Default ENVS
-| **Key**                            | **Value**                 | **Actions** |
-| ---------------------------------- | ------------------------- | ----------- |
-| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
-| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
-| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
-| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
-| **USE_EEVEE**                      | False                     | Default     |
-| **USE_GPU**                        | False                     | Default     |
-| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
-| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
+| **Key**                            | **Value**                 | **Env Type**    |
+| ---------------------------------- | ------------------------- | --------------- |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Brender Studio  |
+| **USE_GPU**                        | False                     | Brender Studio  |
+
 
 ### Set Default ENV GPU
 - `USE_GPU` : Set to `True` to enable GPU rendering.

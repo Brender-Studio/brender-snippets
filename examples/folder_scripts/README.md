@@ -53,5 +53,17 @@ if PROJECT_DIR not in sys.path:
 from utils.setup_render_animation import setup_scene, calculate_frame_chunk, render_animation, log_render_progress
 ```
 
+### Custom Environment Variables
+If you need to use additional or custom environment variables for your specific use case, you can add them in the `envs` section of the Job Settings in Brender Studio Application. Click on `Add Custom env` and provide the variable name and value.
+
+### Custom ENV
+| **Key**                            | **Value**                 | **Env Type** |
+| ---------------------------------- | ------------------------- | -----------  |
+| **<KEY_CUSTOM_ENV>**               | **<CUSTOM_VALUE>**        | Custom       |
+
+
+> Note: Ensure that any custom environment variables you add are properly referenced and handled in your script. For instance, you can retrieve custom variables in your Python script using `os.environ.get('CUSTOM_VARIABLE_NAME')`.
+
+
 This configuration ensures that the AWS Batch container can locate the Python path and import the necessary modules and avoid conflicts. Contributions are welcome to improve this workflow.
 Repository: [Brender Studio Docker Blender](https://github.com/Brender-Studio/brender-studio-cdk/blob/main/docker_blender/app/app.py).
