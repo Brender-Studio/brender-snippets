@@ -39,7 +39,7 @@ This script renders images from multiple HDRI files in a Blender scene. It sets 
 ## Entrypoint:
 `render_multi_hdri.py`
 
-## References (video, repo):
+## References:
 - [N/A]
 
 ## Screenshots:

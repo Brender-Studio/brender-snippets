@@ -2,7 +2,7 @@
 
 Please fill out the following basic template for any scripts being added to the brender-snippets repository.
 
-You can copy this template and paste it into the new script's README.md file or reference it in the example script's README.md file.
+You can copy this template and paste it into the new script's `README.md` file or reference it in the example script's `README.md` file.
 
 ## Name:
 <!-- Enter the name of the script -->
@@ -10,18 +10,23 @@ You can copy this template and paste it into the new script's README.md file or 
 ## Blender Version:
 <!-- Specify the Blender version compatible with the script -->
 
-## Purpose:
-<!-- Briefly describe the purpose of the script -->
-
-
 ## Script Description:
 <!-- Briefly describe what the script does -->
 
-## Detailed Description:
+## Detailed Description (optional):
 <!-- Provide a detailed description of the script's functionality -->
 
-## Type:
-<!-- Indicate whether it's a utility or an example -->
+## Key Features and Parameters (optional):
+<!-- List the key features and parameters of the script -->
+
+## Project Structure (tree):
+<!-- Provide the project structure (a single script or project folder) -->
+
+## Entrypoint:
+<!-- Define the entry point of the script -->
+
+## Use Case:
+<!-- Indicate the use case of the script -->
 - [ ] Utility
 - [ ] Example
 
@@ -53,13 +58,7 @@ You can copy this template and paste it into the new script's README.md file or 
 ## Note:
 <!-- Any additional notes about the script -->
 
-## Project Structure (tree):
-<!-- Provide the project structure (a single script or project folder) -->
-
-## Entrypoint:
-<!-- Define the entry point of the script -->
-
-## References (video, repo):
+## References:
 <!-- Provide references like videos or related repositories -->
 
 ## Screenshots:

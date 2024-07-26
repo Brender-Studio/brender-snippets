@@ -9,6 +9,11 @@
 ## Description:
 This script renders images from multiple cameras in a Blender scene. It sets the active camera for each render and saves the images to the specified output directory.
 
+
+## Entrypoint:
+`render_multi_camera.py`
+
+
 ## Use Case:
 - [x] Utility
 - [x] Example
@@ -35,8 +40,6 @@ This script renders images from multiple cameras in a Blender scene. It sets the
 ### Custom ENV
 - [N/A]
 
-## Entrypoint:
-`render_multi_camera.py`
 
 ## References (video, repo):
 - [N/A]
@@ -51,4 +54,4 @@ To use the script, ensure that:
 - You have set up multiple cameras in your Blender scene.
 
 
-The script demonstrates how to use environment variables for rendering and can be used both as a utility and an example script for rendering from multiple cameras.
+

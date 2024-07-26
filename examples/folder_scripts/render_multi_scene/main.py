@@ -3,7 +3,10 @@ import os
 import logging
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add the project directory to the sys.path before importing any modules
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_DIR not in sys.path:
+    sys.path.append(PROJECT_DIR)
 
 from render_multi_scene.utils.scene_setup import setup_multi_scene
 from render_multi_scene.utils.render_handler import render_scenes
