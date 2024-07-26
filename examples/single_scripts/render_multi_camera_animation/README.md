@@ -24,10 +24,11 @@ Use default environment variables by Brender Studio.
 `render_multi_camera_animation.py`
 
 ## References (video, repo):
-- [N/A]
+- [Blender AWS Cloud Render Multi-Camera Animation Demo | Blender 4.2 LTS | Brender Studio app](https://youtu.be/TmlshjXlRRA?si=DfsjXz1_LUCDY2RH)
 
 ## Screenshots:
-- [N/A]
+
+![3 cameras](./assets/3-cams.gif)
 
 ## Detailed Description:
 This script renders animations from multiple cameras in a Blender scene, organizing the output into separate subfolders for each camera. It's designed for efficient rendering in cloud environments like AWS Batch, utilizing GPU acceleration.
