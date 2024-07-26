@@ -1,34 +1,17 @@
-## Name:
-render_multi_camera_animation
+# Render Multi-Camera Animation
+
+## Author:
+Brender Studio
 
 ## Blender version:
 4.2.0 (LTS)
 
-## Description:
-Render multiple animations from different cameras in a blend file, with each camera's output in its own subfolder.
-
-## Use case:
-- [x] Utility
-- [x] Example
-
-## Job type:
-- [x] Array
-- [ ] Single job
-
-## Envs:
-Use default environment variables by Brender Studio.
-- EFS_BLENDER_OUTPUT_FOLDER_PATH
-- AWS_BATCH_JOB_ARRAY_INDEX
-
-## Entrypoint:
-`render_multi_camera_animation.py`
-
-## References (video, repo):
-- [Blender AWS Cloud Render Multi-Camera Animation Demo | Blender 4.2 LTS | Brender Studio app](https://youtu.be/TmlshjXlRRA?si=DfsjXz1_LUCDY2RH)
-
 ## Screenshots:
 
 ![3 cameras](./assets/3-cams.gif)
+
+## Description:
+Render multiple animations from different cameras in a blend file, with each camera's output in its own subfolder.
 
 ## Detailed Description:
 This script renders animations from multiple cameras in a Blender scene, organizing the output into separate subfolders for each camera. It's designed for efficient rendering in cloud environments like AWS Batch, utilizing GPU acceleration.
@@ -63,5 +46,31 @@ Output Structure:
 ```
 
 This script is ideal for projects requiring multiple camera angles or perspectives of the same animation, streamlining the rendering workflow in professional and high-volume production environments.
+
+## Entrypoint:
+`render_multi_camera_animation.py`
+
+## Use case:
+- [x] Utility
+- [x] Example
+
+## Job type:
+- [x] Array
+- [ ] Single job
+
+## Envs:
+Use default environment variables by Brender Studio.
+
+| **Key**                            | **Value**                             | **Env Type**   |
+| ---------------------------------- | ------------------------------------- | -------------- |
+| **AWS_BATCH_JOB_ARRAY_INDEX**      | AUTO (0,1,2,...)                      | AWS Batch      |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects/PROJECT_NAME/output | Brender-Studio |
+
+
+## References (video, repo):
+- [Blender AWS Cloud Render Multi-Camera Animation Demo | Blender 4.2 LTS | Brender Studio app](https://youtu.be/TmlshjXlRRA?si=DfsjXz1_LUCDY2RH)
+
+
+
 
 
