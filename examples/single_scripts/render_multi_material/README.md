@@ -1,5 +1,8 @@
 # Render Multi-Material
 
+## Author:
+© 2024 Brender Studio
+
 ## Name:
 render_multi_material
 
@@ -24,20 +27,27 @@ Render multiple images of an object with different materials applied.
 ## Entry point:
 `render_multi_material.py`
 
+
 ## Envs:
 
-### Default environment variables:
-Use default environment variables by Brender Studio:
-- EFS_BLENDER_OUTPUT_PATH
-- EFS_BLENDER_FILE_PATH
+### Default ENVS
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
+| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
+| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
+| **USE_EEVEE**                      | False                     | Default     |
+| **USE_GPU**                        | False                     | Default     |
+| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
+| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
 
+### Custom ENV
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **BLENDER_OBJECT_NAME**            | <OBJECT_NAME>             | Custom     |
 
-### Custom environment variables:
-- [x] EFS_BLENDER_OBJECT_NAME
-
-
-## Code:
-- [render_multi_material.py](./render_multi_material.py)
 
 ## Note:
 This script renders multiple images of a specified object, each with a different material applied. It's useful for quickly visualizing how an object looks with various materials without manually changing materials and rendering each time.
@@ -46,7 +56,7 @@ To use this script:
 1. Ensure your Blender scene has the object you want to render.
 2. Create multiple materials in your Blender file.
 3. Modify the `object_name` and `material_names` variables in the script to match your scene.
-4. Set the `output_directory` to your desired output location.
+4. Run the script to render images with different materials applied to the object.
 
 
 

@@ -1,47 +1,56 @@
 # Render Multi HDRI 
 
-## Name:
-render_multi_hdri
+## Author:
+© 2024 Brender Studio
 
-## Blender version:
+## Name:
+`render_multi_hdri`
+
+## Blender Version:
 4.2.0 (LTS)
 
 ## Description:
-Render multiple images from different HDRI files in a blend file.
+This script renders images from multiple HDRI files in a Blender scene. It sets each HDRI file as the environment texture and saves the rendered images to the specified output directory.
 
-## Use case:
+## Use Case:
 - [ ] Utility
 - [x] Example
 
-## Job type:
+## Job Type:
 - [ ] Array
 - [x] Single job
+
+## Envs:
+
+### Default ENVS
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
+| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
+| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
+| **USE_EEVEE**                      | False                     | Default     |
+| **USE_GPU**                        | False                     | Default     |
+| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
+| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
+
+### Custom ENV
+- [N/A]
+
 
 ## Entrypoint:
 `render_multi_hdri.py`
 
-
-## Envs:
-Use default environment variables by Brender Studio.
-- EFS_BLENDER_OUTPUT_PATH
-- EFS_BLENDER_FILE_PATH
-
-
-## Code:
-
-- [render_multi_hdri.py](./render_multi_hdri.py)
-
-
-## Note:
-This script renders multiple images from different HDRI files in a blend file. The script uses the default environment variables provided by Brender Studio to set the output path and the file path. The script can be used as a utility script to render multiple images from different HDRI files in a single job.
-
-If you want to use this script, remember to set up more than one HDRI file in your Blender scene.
-
-You can use custom env variables to set the HDRI file path.
-
-## References (video, repo):
+## References:
 - [N/A]
 
 ## Screenshots:
 - [N/A]
 
+## Note:
+To use this script:
+1. Ensure that multiple HDRI files are set up in your Blender scene.
+2. The script will render images for each HDRI file found and save them to the specified output directory.
+
+You can customize environment variables to specify different HDRI file paths if needed.

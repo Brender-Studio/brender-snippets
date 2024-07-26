@@ -1,33 +1,48 @@
-# Render Multi camera
+# Render Multi Camera
+
+## Author:
+© 2024 Brender Studio
 
 ## Name:
-render_multi_camera
+`render_multi_camera`
 
-## Blender version:
+## Blender Version:
 4.2.0 (LTS)
 
 ## Description:
-Render multiple images from different cameras in a blend file.
-
-## Use case:
-- [x] Utility
-- [x] Example
-
-## Job type:
-- [ ] Array
-- [x] Single job
-
-## Envs:
-Use default environment variables by Brender Studio.
-- EFS_BLENDER_OUTPUT_PATH
-- EFS_BLENDER_FILE_PATH
-
-## Code:
-- [render_multi_camera.py](./render_multi_camera.py)
+This script renders images from multiple cameras in a Blender scene. It sets the active camera for each render and saves the images to the specified output directory.
 
 
 ## Entrypoint:
 `render_multi_camera.py`
+
+
+## Use Case:
+- [x] Utility
+- [x] Example
+
+## Job Type:
+- [ ] Array
+- [x] Single job
+
+## Envs:
+
+### Default ENVS
+| **Key**                            | **Value**                 | **Actions** |
+| ---------------------------------- | ------------------------- | ----------- |
+| **JOB_ACTION_TYPE**                | custom_render_python      | Default     |
+| **EFS_MAIN_SCRIPT_PATH**           | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_FILE_PATH**          | /mnt/efs/projects/        | Default     |
+| **EFS_BLENDER_OUTPUT_FOLDER_PATH** | /mnt/efs/projects//output | Default     |
+| **BLENDER_EXECUTABLE**             | /usr/bin/blender          | Default     |
+| **USE_EEVEE**                      | False                     | Default     |
+| **USE_GPU**                        | False                     | Default     |
+| **BUCKET_NAME**                    | brender-bucket-s3-<UUID>  | Default     |
+| **BUCKET_KEY**                     | <PROJECT_NAME>            | Default     |
+
+### Custom ENV
+- [N/A]
+
 
 ## References (video, repo):
 - [N/A]
@@ -36,9 +51,10 @@ Use default environment variables by Brender Studio.
 - [N/A]
 
 ## Note:
-This script renders multiple images from different cameras in a blend file. The script uses the default environment variables provided by Brender Studio to set the output path and the file path. The script can be used as a utility script to render multiple images from different cameras in a single job.
+This script renders multiple images from different cameras in a Blender scene. It uses default environment variables provided by Brender Studio to set the output path and the file path.
 
-Additionally, the script can be used as an example to demonstrate how to render multiple images from different cameras in a blend file using Brender Studio.
-To make the script work, remember to set up more than one camera in your Blender scene.
+To use the script, ensure that:
+- You have set up multiple cameras in your Blender scene.
+
 
 

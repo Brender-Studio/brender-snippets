@@ -8,10 +8,6 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_DIR not in sys.path:
     sys.path.append(PROJECT_DIR)
     
-
-if PROJECT_DIR not in sys.path:
-    sys.path.append(PROJECT_DIR)
-    
 from render_multi_environment.utils.scene_setup import setup_scene
 from render_multi_environment.utils.render_handler import render_scene_with_environments
 from render_multi_environment.utils.aws_batch_utils import get_aws_batch_info
