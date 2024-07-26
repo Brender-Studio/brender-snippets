@@ -27,7 +27,7 @@ Use default environment variables by Brender Studio:
 - [render_gpu.py](./render_gpu.py)
 
 
-# Entrypoint:
-- The entry point for this script is the `main()` function.
+## Entrypoint:
+- The entry point for this script is the `render_gpu.py` function.
 
 

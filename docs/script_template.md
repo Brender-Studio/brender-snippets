@@ -13,6 +13,9 @@
 ## Script Description:
 <!-- Briefly describe what the script does -->
 
+## Detailed Description:
+<!-- Provide a detailed description of the script's functionality -->
+
 ## Type:
 <!-- Indicate whether it's a utility or an example -->
 - [ ] Utility
@@ -26,8 +29,6 @@
 ## Envs:
 <!-- Define the required environment variables -->
 
-## Code:
-<!-- Include the script code -->
 
 ## Note:
 <!-- Any additional notes about the script -->
@@ -44,5 +45,4 @@
 ## Screenshots:
 <!-- Include relevant screenshots -->
 
-## Tags:
-<!-- Add relevant tags for the script -->
+
