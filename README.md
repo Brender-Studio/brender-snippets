@@ -59,7 +59,7 @@ If you need help with a script or have questions:
 
 ## License
 
-Brender Snippets is distributed under the MIT license. See the [LICENSE](/LICENSE) file for more details.
+Brender Snippets is distributed under the GPL license. See the [LICENSE](/LICENSE) file for more details.
 
 ---
 
